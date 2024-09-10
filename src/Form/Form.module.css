@@ -1,0 +1,32 @@
+.form, 
+.file {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form input[type="text"], .form select{
+  padding: 1rem;
+  font-size: 1.8rem;
+  background-color: transparent;
+  border: .3rem solid var(--white);
+  color: var(--white);
+  font-weight: 400;
+  border-radius: 1rem;
+}
+
+.file ::placeholder {
+  color: var(--white);
+}
+
+.submit {
+  padding: 1rem;
+  font-size: 1.8rem;
+  background-color: var(--primary);
+  color: var(--white);
+  font-weight: 700;
+  border-radius: 1rem;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase ;
+}
