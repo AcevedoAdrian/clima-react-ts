@@ -19,6 +19,9 @@
   color: var(--white);
 }
 
+.form select option {
+  background-color: #000000b0;
+}
 .submit {
   padding: 1rem;
   font-size: 1.8rem;

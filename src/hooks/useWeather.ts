@@ -36,27 +36,36 @@ const WeatherSchema = z.object({
   }),
 });
 
+const initialWeather = {
+  name: "",
+  main: {
+    temp: 0,
+    temp_min: 0,
+    temp_max: 0,
+  },
+};
 // Inferencias en base al esquema de validación de Zod
 export type Weather = z.infer<typeof WeatherSchema>;
 
 export default function useWeather() {
   // State
-  const [weather, setWeather] = useState<Weather>({
-    name: "",
-    main: {
-      temp: 0,
-      temp_min: 0,
-      temp_max: 0,
-    },
-  });
+  const [weather, setWeather] = useState<Weather>(initialWeather);
+  const [loading, setLoading] = useState(false);
+  const [notFound, setNotFound] = useState(false);
 
   // Fetch Weather
   const fetchWeather = async (search: SearchInterface) => {
     const appId = import.meta.env.VITE_API_KEY;
+    setLoading(true);
+    setWeather(initialWeather);
+    setNotFound(false);
     try {
-      const geoUTRL = `http://api.openweathermap.org/geo/1.0/direct?q=${search.city},${search.country}&appid=${appId}`;
+      const geoUTRL = `https://api.openweathermap.org/geo/1.0/direct?q=${search.city},${search.country}&appid=${appId}`;
       const { data } = await axios.get(geoUTRL);
-
+      if (!data.length) {
+        setNotFound(true);
+        return;
+      }
       const { lat, lon } = data[0];
       const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${appId}`;
 
@@ -95,6 +104,8 @@ export default function useWeather() {
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -102,6 +113,8 @@ export default function useWeather() {
   return {
     hasWeatherData,
     weather,
+    loading,
+    notFound,
     fetchWeather,
   };
 }

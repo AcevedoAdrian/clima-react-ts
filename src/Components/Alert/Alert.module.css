@@ -1,9 +1,11 @@
 .alert {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   font-weight: 700;
-  font-size: 1.6rem;
-  background-color: rgba(255, 223, 223, 0.712);
-  color: rgba(188, 28, 33);
-  padding: 1rem;
+  font-size: 2rem;
+    text-transform: uppercase;
+    color: rgb(245, 245, 245);
+    background-color: rgba(255, 0, 0, 0.377);
+    padding: 1rem;
+    border-radius: 1rem;
 }

@@ -8,9 +8,12 @@ interface WeatherDetailProps {
 export default function WeatherDetail({ weather }: WeatherDetailProps) {
   return (
     <div className={styles.container}>
-      <h2>Clima de: {weather.name}</h2>
-      <p>Temperatura: {parseToTemperature(weather.main.temp)}&deg;C</p>
-      <div>
+      <h2>{weather.name}</h2>
+      <p className={styles.current}>
+        {" "}
+        {parseToTemperature(weather.main.temp)}&deg;C
+      </p>
+      <div className={styles.temperature}>
         <p>
           Temperatura Mínima:{" "}
           <span>{parseToTemperature(weather.main.temp_min)}&deg;C</span>
