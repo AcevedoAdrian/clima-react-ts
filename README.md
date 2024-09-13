@@ -21,18 +21,18 @@ This project is a weather application built with React and TypeScript. It allows
 - **ESLint**: A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
 - **CSS Modules**: A CSS file in which all class and animation names are scoped locally by default.
 
-## Getting Started
+### Getting Started
 
 To get a local copy up and running follow these simple steps.
 
-### Prerequisites
+#### Prerequisites
 
 Make sure you have the following installed on your local machine:
 
 - Node.js
 - pnpm (or npm/yarn)
 
-### Installation
+#### Installation
 
 1. Clone the repo
    ```sh
@@ -41,7 +41,7 @@ Make sure you have the following installed on your local machine:
     pnpm install
 3. Create a .env.local file in the root directory and add your OpenWeather API key
     VITE_API_KEY=your_openweather_api_key
-### Project Structure
+##### Project Structure
 ```
 /clima-react-ts
 ├── public
@@ -70,7 +70,7 @@ Make sure you have the following installed on your local machine:
 ├── vite.config.ts
 ```
 
-### Available Scripts
+###### Available Scripts
 
 In the project directory, you can run:
 
