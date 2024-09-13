@@ -1,50 +1,81 @@
-# React + TypeScript + Vite
+# Weather App with React and TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a weather application built with React and TypeScript. It allows users to search for weather information by city and country.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Available Scripts](#available-scripts)
+- [Environment Variables](#environment-variables)
+- [License](#license)
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+- **Vite**: A build tool that aims to provide a faster and leaner development experience for modern web projects.
+- **Zod**: A TypeScript-first schema declaration and validation library.
+- **Axios**: A promise-based HTTP client for the browser and Node.js.
+- **ESLint**: A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
+- **CSS Modules**: A CSS file in which all class and animation names are scoped locally by default.
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+Make sure you have the following installed on your local machine:
+
+- Node.js
+- pnpm (or npm/yarn)
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/your_username/weather-app.git
+2. Install PNPM packages
+    pnpm install
+3. Create a .env.local file in the root directory and add your OpenWeather API key
+    VITE_API_KEY=your_openweather_api_key
+### Project Structure
+```
+/clima-react-ts
+├── public
+│   ├── index.html
+├── src
+│   ├── assets
+│   ├── components
+│   │   ├── WeatherCard.tsx
+│   │   ├── SearchBar.tsx
+│   ├── hooks
+│   │   ├── useWeather.ts
+│   ├── services
+│   │   ├── weatherService.ts
+│   ├── styles
+│   │   ├── App.module.css
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── vite-env.d.ts
+├── .eslintrc.js
+├── .gitignore
+├── index.html
+├── package.json
+├── pnpm-lock.yaml
+├── README.md
+├── tsconfig.json
+├── vite.config.ts
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Available Scripts
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+In the project directory, you can run:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+- `pnpm dev`: Runs the app in the development mode.
+- `pnpm build`: Builds the app for production to the `dist` folder.
+- `pnpm preview`: Serves the production build locally.
+- `pnpm lint`: Runs ESLint to analyze the code for potential errors and style issues.
 ```
