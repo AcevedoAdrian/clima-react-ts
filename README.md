@@ -73,7 +73,7 @@ Make sure you have the following installed on your local machine:
 #### Available Scripts
 
 In the project directory, you can run:
-
+```
 - `pnpm dev`: Runs the app in the development mode.
 - `pnpm build`: Builds the app for production to the `dist` folder.
 - `pnpm preview`: Serves the production build locally.
