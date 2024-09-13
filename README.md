@@ -70,7 +70,7 @@ Make sure you have the following installed on your local machine:
 ├── vite.config.ts
 ```
 
-###### Available Scripts
+##### Available Scripts
 
 In the project directory, you can run:
 
