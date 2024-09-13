@@ -41,7 +41,7 @@ Make sure you have the following installed on your local machine:
     pnpm install
 3. Create a .env.local file in the root directory and add your OpenWeather API key
     VITE_API_KEY=your_openweather_api_key
-##### Project Structure
+#### Project Structure
 ```
 /clima-react-ts
 ├── public
@@ -70,7 +70,7 @@ Make sure you have the following installed on your local machine:
 ├── vite.config.ts
 ```
 
-##### Available Scripts
+#### Available Scripts
 
 In the project directory, you can run:
 
